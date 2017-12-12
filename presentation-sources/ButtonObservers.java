@@ -56,6 +56,9 @@ public class ButtonObservers {
           System.out.println("Socorro!");
         }
       });
+
+    // Using lambda to add an action listener:
+    theButton.addActionListener( e -> System.out.println("Au secours!") );
   }
   
   private void layoutComponents() {
