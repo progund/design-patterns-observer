@@ -1,4 +1,4 @@
-public enum WeaponType{
+public enum WeaponType {
   CLUB,
   SWORD,
   SHOTGUN,

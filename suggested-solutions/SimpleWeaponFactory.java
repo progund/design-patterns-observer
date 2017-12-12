@@ -1,6 +1,7 @@
-public class SimpleWeaponFactory implements WeaponFactory{
-  public WeaponBehavior createWeapon(WeaponType type){
-    switch(type){
+public class SimpleWeaponFactory implements WeaponFactory {
+  
+  public WeaponBehavior createWeapon(WeaponType type) {
+    switch(type) {
     case CLUB:
       return new Club();
     case SWORD:

@@ -1,6 +1,8 @@
 import java.util.List;
-public class Game{
-  public static void main(String[] args){
+
+public class Game {
+  
+  public static void main(String[] args) {
     // Observable list:
     FragList fragList = new FragList();
     //Observers: 
@@ -12,7 +14,7 @@ public class Game{
     Character player =
       cFactory.createUnarmedCharacter("Sir Playsalot");
     GameEntitiesFactory gef = new NightmareEntitiesFactory();
-    List<Character>    opponents = gef.createBadGuys();
+    List<Character> opponents = gef.createBadGuys();
     List<WeaponBehavior> weapons = gef.createWeapons();
 
     characters.addCharacters(opponents);
@@ -21,15 +23,15 @@ public class Game{
     System.out.println(characters);
     System.out.println("=================================================");
     sleep(1000);
-    int weaponIndex=0;
+    int weaponIndex = 0;
     System.out.print(player);
     System.out.println(" enters the woods");
     sleep(1000);
-    for(Character c : opponents){
+    for(Character c : opponents) {
       System.out.println("<<<Oh no, not another one!");
       System.out.println(player + " meets " + c + " who attacks!");     
       sleep(1000);
-      while(c.health()>0){        
+      while(c.health() > 0) { 
         c.fight(player);
         sleep(200);
         player.fight(c);
@@ -38,7 +40,7 @@ public class Game{
         sleep(200);
         player.fight(c);
         sleep(500);
-        if(c.health()<1){
+        if(c.health() < 1) {
           fragList.incFrags(player.name());
           fragList.addKill(player, c);
         }
@@ -46,7 +48,7 @@ public class Game{
       System.out.println("==============================");
       System.out.println(player + " finds a magic potion and drinks it");
       player.takeDamage(-100);
-      if(weaponIndex < weapons.size()){
+      if(weaponIndex < weapons.size()) {
         System.out.println(player + " finds " +
                            weapons.get(weaponIndex)
                            + " and upgrades his weapon!");
@@ -60,9 +62,10 @@ public class Game{
     System.out.println("Final score: ");
     System.out.println(characters);
   }
-  static void sleep(int millis){
-    try{
+  
+  static void sleep(int millis) {
+    try {
       Thread.currentThread().sleep(millis);
-    }catch(InterruptedException e){}
+    } catch(InterruptedException ignore) {}
   }
 }

@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
-public class NightmareEntitiesFactory implements GameEntitiesFactory{
+
+public class NightmareEntitiesFactory implements GameEntitiesFactory {
   // All kinds of bad guys in nightmare
   private static CharacterFactory knightFac = new KnightFactory();
   private static CharacterFactory trollFac  = new TrollFactory();
@@ -9,7 +10,7 @@ public class NightmareEntitiesFactory implements GameEntitiesFactory{
   private static WeaponFactory weaponFac     = new SimpleWeaponFactory();
 
   // One night, two trolls and two orchs
-  public List<Character>createBadGuys(){
+  public List<Character>createBadGuys() {
     List<Character> badGuys = new ArrayList<>();
     badGuys.add(knightFac
                 .createCharacter(WeaponType.SWORD, "Sir Humpty"));
@@ -23,8 +24,9 @@ public class NightmareEntitiesFactory implements GameEntitiesFactory{
                 .createCharacter(WeaponType.CLUB, "Bill"));
     return badGuys;
   }
+  
   // A club, a sword and a shotgun
-  public List<WeaponBehavior>createWeapons(){
+  public List<WeaponBehavior>createWeapons() {
     List<WeaponBehavior>weapons = new ArrayList<>();
     weapons.add(weaponFac.createWeapon(WeaponType.CLUB));
     weapons.add(weaponFac.createWeapon(WeaponType.SWORD));
